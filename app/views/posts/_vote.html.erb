@@ -1,0 +1,15 @@
+<% if current_user.voted_for?(@post) %>
+
+<p>
+	<strong>Vote:</strong>
+	<%= link_to "downvote", unlike_post_path(@post), class: "downvote", method: :put, remote: true %>
+</p>
+
+<% else %>
+
+<p>
+	<strong>Vote:</strong>
+	<%= link_to "upvote", like_post_path(@post), class: "upvote", method: :put, remote: true %>
+</p>
+
+<% end %>
